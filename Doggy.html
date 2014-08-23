@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+<script type="text/javascript">
+
+function myclick(){
+	var name = document.getElementById('name').value;
+	var gender = document.getElementById('gender').value;
+	var new_dog = new Dog ("name","gender");
+	new_dog.adddog();
+ 
+}
+
+
+function Dog(name,gender){
+	this.name=name;
+	this.gender=gender;
+	this.bark=function(){
+		alert('HAU');}
+	this.adddog= function(){
+		alert(doglist.length);
+
+		doglist[doglist.length] = this;
+		alert(doglist.length);
+		//var s += (this.name+" "+this.gender);
+		//alert(s);
+	}
+}
+
+var doglist = [];
+
+function adopt(name){
+	var index = doglist.indexOf(name);
+					
+		if (index > -1) 
+		{doglist.splice(index, 1);
+		}
+		else 
+		alert('Dod was not found');
+}	
+
+
+
+</script>
+			
+
+
+</head>
+<body>
+
+<h1>Dogs form</h1>
+<h2 id='myHeader'>Add a Dog :) </h2>
+
+<input type="button" value="butoon" onclick="myclick();">
+
+<form>
+dog name:<input type='text' name='name' id="name">
+dog gender:<input type='text' name='gender' id="gender">
+<input type="button" value="submit" onclick="myclick()" >
+</form>
+
+
+</body>
+</html>
